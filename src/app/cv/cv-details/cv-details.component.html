@@ -1,0 +1,13 @@
+<h2>{{project.projectname}}</h2>
+<div>
+    <div>Start: {{ project.from.toLocaleDateString() }}</div>
+    <div>End: {{ project.from.toLocaleDateString() }}</div>
+
+    <p> {{project.description}}</p>
+
+    <ul *ngFor="let tec of project.tecstack">
+        <li>{{tec}}</li>
+    </ul>
+
+    <button (click)="onBackButtonClick()">Back</button>
+</div> 

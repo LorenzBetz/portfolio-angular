@@ -1,0 +1,6 @@
+<div *ngFor="let project of projects" (click)="gotoDetail(project)" class="project">
+    <div>{{ project.projectname }}</div>
+
+    <div>{{ project.from.getMonth() }}/{{ project.from.getFullYear() }} to {{ project.to.getMonth() }}/{{ project.to.getFullYear() }}</div>
+    <div>{{ project.description }}</div>
+</div>
