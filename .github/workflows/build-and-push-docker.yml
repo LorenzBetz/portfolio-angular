@@ -24,4 +24,4 @@ jobs:
     - name: Build the Docker image version number
       run: docker build --platform=linux/x86_64 -t lrbcode/portfolio-angular:v${{ github.run_number }} .
     - name: Docker Push
-      run: docker push -a lrbcode/meo-web
+      run: docker push -a lrbcode/portfolio-angular
