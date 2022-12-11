@@ -1,3 +1,33 @@
+.projects {
+    margin: auto;
+    width: fit-content;
+    margin-top: 15vh;
+}
+
 .project {
-    padding-bottom: 30px;
+    width: 100%;
+    padding-bottom: 15vh;
+    margin: auto;
+}
+
+.project:hover {
+    cursor: pointer;
+}   
+
+
+.project-name {
+    font-weight: 400;
+    font-size: 23px;
+}
+
+.date {
+    min-width: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.red {
+    color: darkred;
 }

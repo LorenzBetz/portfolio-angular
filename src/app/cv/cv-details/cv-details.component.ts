@@ -10,16 +10,19 @@ import { ProjectService } from '../../domain/services/project.service';
 })
 export class CvDetailsComponent implements OnInit {
   navigated = false;
-  project!:  Project;
+  project?:  Project;
 
   constructor(private route: ActivatedRoute, private projectService: ProjectService) { }
 
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       if (params['id'] !== undefined) {
-        const id = +params['id'];
+        const id = params['id'];
         this.navigated = true;
-        this.project = this.projectService.getProject(id);
+        this.projectService.getProject(id)
+        .subscribe(project => {
+          this.project = project;
+        });
       } else {
         this.navigated = false;
       }

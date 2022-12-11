@@ -1,0 +1,27 @@
+.project-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif !important;
+
+}
+
+.project-item {
+    margin: auto;
+    width: 60%;
+    height: fit-content;
+}
+
+.description {
+    margin-top: 1em;
+}
+
+
+.tec{
+    margin-top: 3em;
+}
+
+button {
+    margin-top: 3em;
+    float: right;
+}

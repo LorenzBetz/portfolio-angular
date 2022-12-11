@@ -1,6 +1,16 @@
-<div *ngFor="let project of projects" (click)="gotoDetail(project)" class="project">
-    <div>{{ project.projectname }}</div>
+<div #proj class="projects">
+    <div *ngFor="let project of projects" (click)="gotoDetail(project)" class="project">
+        <div>
+            <div class="project-name">{{ project.projectname }}</div>
 
-    <div>{{ project.from.getMonth() }}/{{ project.from.getFullYear() }} to {{ project.to.getMonth() }}/{{ project.to.getFullYear() }}</div>
-    <div>{{ project.description }}</div>
+            <div *ngIf="project.to" class="date">
+                {{ project.from.getMonth() + 1 }}/{{ project.from.getFullYear() }} to {{project.to.getMonth() + 1 }}/{{
+                project.to.getFullYear() }}
+            </div>
+            <div *ngIf="!project.to" class="date">
+                since {{ project.from.getMonth() + 1 }}/{{ project.from.getFullYear() }}
+            </div>
+        </div>
+
+    </div>
 </div>

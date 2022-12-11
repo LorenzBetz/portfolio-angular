@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cv, Personal, Project } from '../domain';
+import { PersonalService } from '../domain/services/personal.service';
 import { ProjectService } from '../domain/services/project.service';
 
 @Component({
@@ -9,12 +10,14 @@ import { ProjectService } from '../domain/services/project.service';
 })
 export class CvComponent implements OnInit {
 
-  cv!: Cv;
+  projects!: Project[];
+  personal!: Personal;
 
-  constructor(private projectService: ProjectService) {
+  constructor(private projectService: ProjectService, private personalService: PersonalService) {
   }
 
   ngOnInit(): void {
-    this.cv = this.projectService.getProjects();
+
+    this.personal = this.personalService.getPersonal();
   }
 }

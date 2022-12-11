@@ -12,6 +12,12 @@ import { ProjectService } from './domain/services/project.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { PageFooterComponent } from './shared/page-footer/page-footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LandingComponent } from './landing/landing.component';
+import { ContactComponent } from './contact/contact.component';
+import { PositionService } from './domain/services/position.service';
+import { PersonalService } from './domain/services/personal.service';
+import { SocialsService } from './domain/services/socials.service';
 
 @NgModule({
   declarations: [
@@ -21,14 +27,17 @@ import { PageFooterComponent } from './shared/page-footer/page-footer.component'
     CvComponent,
     CvPersonalComponent,
     NavigationComponent,
-    PageFooterComponent
+    PageFooterComponent,
+    LandingComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    HttpClientModule
+    NgbModule
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, PositionService, PersonalService, SocialsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,8 @@ import { Cv, Personal, Project } from '../../domain';
   styleUrls: ['./cv-personal.component.scss']
 })
 export class CvPersonalComponent implements OnInit {
-  
+  public isMenuCollapsed = true;
+
   @Input() personal!: Personal;
 
   constructor() { }

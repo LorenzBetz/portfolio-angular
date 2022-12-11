@@ -1,0 +1,120 @@
+@media screen and (min-width: 992px) {
+
+    .navbar,
+    .navbar-expand-lg .navbar-collapse,
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        font-size: 14px;
+        letter-spacing: 4px;
+        font-weight: bold;
+        font-family: 'Waiting for the Sunrise', cursive !important;
+
+    }
+
+    .pfroile-picture img {
+        width: auto;
+        width: 100%;
+    }
+
+    .pfroile-picture {
+        margin-top: 10px;
+        display: inline-block;
+        position: absolute;
+        margin-top: 5em;
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        border-radius: 50%;
+
+    }
+
+    a:hover {
+        color: darkred;
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .navbar,
+    .navbar-expand-lg .navbar-collapse,
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+        margin: auto;
+    }
+
+    .navbar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;
+        letter-spacing: 4px;
+        font-weight: bold;
+        font-family: 'Waiting for the Sunrise', cursive !important;
+        --bs-navbar-toggler-border-radius: 0;
+        --bs-border-width: 0;
+        --bs-navbar-toggler-focus-width: 0;
+
+    }
+
+    .navbar-collapse {
+        flex-basis: unset;
+        flex-grow: unset;
+    }
+
+    .nav-item {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+
+    .pfroile-picture img {
+        width: auto;
+        width: 100%;
+    }
+
+
+    .pfroile-picture {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-inline: 3em;
+        margin-top: 1em;
+    }
+
+    a:hover {
+        color: darkred;
+    }
+
+
+    button.navbar-toggler {
+        border: 0;
+        margin-inline: 3em;
+    }
+    button:hover {
+        color: darkred;
+        line-height: 0;
+    }
+
+    button:visited:hover {
+        line-height: 0;
+
+    }
+
+
+    button:visited {
+        border-image-width: 0;
+    }
+
+}

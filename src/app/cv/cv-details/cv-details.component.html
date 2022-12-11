@@ -1,13 +1,16 @@
-<h2>{{project.projectname}}</h2>
-<div>
-    <div>Start: {{ project.from.toLocaleDateString() }}</div>
-    <div>End: {{ project.from.toLocaleDateString() }}</div>
-
-    <p> {{project.description}}</p>
-
-    <ul *ngFor="let tec of project.tecstack">
-        <li>{{tec}}</li>
-    </ul>
-
-    <button (click)="onBackButtonClick()">Back</button>
-</div> 
+<div class="project-container">
+    <div *ngIf="!!project" class="project-item">
+        <h2>{{project.projectname}}</h2>
+        <div>
+            <div class="date"><span>{{ project.from.toLocaleDateString() }}</span><span
+                    *ngIf="project.from.toLocaleDateString()"> to {{ project.from.toLocaleDateString() }}</span></div>
+            <div class="description">{{project.description}}</div>
+            <div class="tec">
+                <span *ngFor="let tec of project.tecstack; let i=index">
+                    {{tec}} <span *ngIf="i != project.tecstack.length-1"> | </span>
+                </span>
+            </div>
+            <button (click)="onBackButtonClick()">back</button>
+        </div>
+    </div>
+</div>

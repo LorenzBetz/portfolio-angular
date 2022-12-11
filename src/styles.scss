@@ -2,8 +2,22 @@
 body {
     margin: 0 !important;
     min-height: 100%;
+    font-family: 'Waiting for the Sunrise', cursive !important; 
 }
 
 html{
     height:  100%;
+    scroll-behavior: unset !important;
 }
+
+button {
+    background-color: white;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700&display=swap');
+
+/* Importing Bootstrap SCSS file. 
+@import '~bootstrap/scss/bootstrap';*/
+@import '../src/assets/fontawesome/css/all.css';

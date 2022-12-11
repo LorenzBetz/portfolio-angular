@@ -1,0 +1,23 @@
+.contact {
+    display: flex;
+    align-items: center;    
+    height: 100%;
+}
+
+.channels {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.channel {
+    margin: 30px;
+}
+
+.channel:hover {
+    cursor: pointer;
+}
+
+a {
+    color: black;
+}
