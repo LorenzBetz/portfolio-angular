@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Build the Docker image latest
+      run: docker build --platform=linux/x86_64 -t lrbcode/portfolio-angular:latest .
+    - name: Build the Docker image version number
+      run: docker build --platform=linux/x86_64 -t lrbcode/portfolio-angular:v${{ github.run_number }} .
+    - name: Docker Push
+      run: docker push -a lrbcode/portfolio-angular
