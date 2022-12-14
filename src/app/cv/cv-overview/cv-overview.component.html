@@ -1,8 +1,9 @@
 <div #proj class="projects">
-    <div *ngFor="let project of projects" (click)="gotoDetail(project)" class="project">
+    <div *ngFor="let project of projects; let indexOfelement=index;" (click)="gotoDetail(project)" class="project">
         <div>
-            <div class="project-name">{{ project.projectname }}</div>
-
+            <div *ngIf="indexOfelement==0" class="project-name red">{{ project.projectname }}</div>
+            <div *ngIf="indexOfelement!=0" class="project-name">{{ project.projectname }}</div>
+            
             <div *ngIf="project.to" class="date">
                 {{ project.from.getMonth() + 1 }}/{{ project.from.getFullYear() }} bis {{project.to.getMonth() + 1 }}/{{
                 project.to.getFullYear() }}
