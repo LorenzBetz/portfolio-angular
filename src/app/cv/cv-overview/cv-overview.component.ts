@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input, ElementRef, ViewChild, ViewRef, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, ElementRef, ViewChild, ViewRef, SimpleChange, SimpleChanges, ApplicationRef, ChangeDetectorRef } from '@angular/core';
 import { Cv, Personal, Project } from '../../domain';
 import { Router } from '@angular/router';
 import { PositionService } from 'src/app/domain/services/position.service';
@@ -14,17 +14,15 @@ export class CvOverviewComponent implements OnInit {
 
   projects?: Project[];
 
-  constructor(private router: Router, private positionService: PositionService, private projectService: ProjectService) { }
+  constructor(private router: Router, private positionService: PositionService, private projectService: ProjectService,private ref: ChangeDetectorRef) { }
 
   async ngOnInit(): Promise<void> {
     await this.projectService.getProjects()
       .subscribe(projects => {
         this.projects = projects;
+        this.ref.detectChanges();
+        this.setPositionOnLoad();
       });
-  }
-
-  ngDoCheck(): void {
-    this.setPositionOnLoad();
   }
 
   gotoDetail(project: Project): void {
