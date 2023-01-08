@@ -31,3 +31,10 @@
 .red {
     color: darkred;
 }
+
+
+@media screen and (max-width: 992px) {
+    .projects {
+      padding: 1em;
+    }
+  }
