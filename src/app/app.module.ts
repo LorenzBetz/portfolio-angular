@@ -18,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PositionService } from './domain/services/position.service';
 import { PersonalService } from './domain/services/personal.service';
 import { SocialsService } from './domain/services/socials.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SocialsService } from './domain/services/socials.service';
     NavigationComponent,
     PageFooterComponent,
     LandingComponent,
-    ContactComponent
+    ContactComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
