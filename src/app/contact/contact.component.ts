@@ -11,6 +11,7 @@ export class ContactComponent implements OnInit {
   public insta: string = "";
   public xing: string = "";
   public linkedIn: string = "";
+  public gitHub: string = "";
 
   constructor(private socialService: SocialsService) { }
 
@@ -22,6 +23,7 @@ export class ContactComponent implements OnInit {
           var resMap = new Map(Object.entries(socials));
           this.insta = resMap.get("Instagram") ?? "";
           this.linkedIn = resMap.get("LinkedIn") ?? "";
+          this.gitHub = resMap.get("GitHub") ?? "";
           this.xing = resMap.get("Xing")?? "";
         });
     
