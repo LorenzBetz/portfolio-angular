@@ -1,0 +1,11 @@
+<div class="post-view">
+    <div class="post-view-content">
+        <div>
+            <markdown [data]="post?.text"></markdown>
+        </div>
+    </div>
+    <div class="post-view-controls">
+        <button class="col-6" (click)="onBackButtonClick()"><i class="fa-solid fa-chevron-left"></i></button>
+        <button *ngIf="isAuthenticated() | async" class="col-6" (click)="toggleEdit()"><i class="fa-solid fa-pen-to-square"></i></button>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 
 @Component({
   selector: 'app-navigation',
@@ -9,9 +10,12 @@ export class NavigationComponent implements OnInit {
 
   public isMenuCollapsed = true;
   
-  constructor() { }
+  constructor(private auth: OidcSecurityService) { }
 
   ngOnInit(): void {
   }
 
+  isAuthenticated() {
+    return this.auth.isAuthenticated();
+  }
 }

@@ -1,0 +1,4 @@
+<div class="login-component">
+    <button (click)="login()" *ngIf="(isAuthenticated() | async) == false">Login</button>
+    <button (click)="logout()" *ngIf="(isAuthenticated() | async) == true">Logout</button>
+</div>

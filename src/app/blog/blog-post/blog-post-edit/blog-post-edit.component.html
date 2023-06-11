@@ -1,0 +1,14 @@
+<div class="post-edit">
+    <div class="post-edit-content">
+        <form novalidate>
+            <input class="col-12" name="title" [(ngModel)]="editPost.title">
+            <angular-markdown-editor class="col-12" rows="30" textareaId="blog-post-edit" [options]="editorOptions"
+                name="edit-Post-text" [(ngModel)]="editPost.text" (onFullscreenExit)="hidePreview()">
+            </angular-markdown-editor>
+        </form>
+    </div>
+    <div class="post-edit-controls">
+        <button class="col-6" (click)="toggleEdit()"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="col-6" (click)="onSaveClick()"><i class="fa-solid fa-floppy-disk"></i></button>
+    </div>
+</div>

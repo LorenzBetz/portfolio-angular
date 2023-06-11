@@ -1,0 +1,16 @@
+<div class="blog-overview">
+    <app-blog-overview-header></app-blog-overview-header>
+    <div class="blog-overview-item" *ngFor="let post of posts | async" (click)="gotoDetail(post?.id)">
+        <div class="header">
+            <img class="profile-img" src={{post?.author.pictureUrl}} alt="alternatetext"> {{post?.author.name}} - {{post?.created | date}}
+        </div>
+        <div class="titel">
+            {{post?.title}}
+        </div>
+    </div>
+
+    <div class="blog-overview-controls">
+        <button class="col-6" (click)="onBackClick()"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="col-6" (click)="onNextClick()"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</div>

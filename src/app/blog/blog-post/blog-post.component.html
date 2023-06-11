@@ -1,0 +1,8 @@
+<div class="blog-post">
+    <div *ngIf="isEditMode; else elseBlock" class="blog-post">
+        <app-blog-post-edit class="app-blog-post-edit" (save)="save($event)" [toggleEdit]="toggleEdit" [post]="post"></app-blog-post-edit>
+    </div>
+    <ng-template #elseBlock>
+        <app-blog-post-view [toggleEdit]="toggleEdit" [post]="post"></app-blog-post-view>
+    </ng-template>
+</div>

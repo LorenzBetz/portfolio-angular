@@ -4,7 +4,7 @@ import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-import { Personal, Project } from '../models';
+import { Project } from '../models';
 
 @Injectable()
 export class ProjectService {
@@ -30,7 +30,6 @@ export class ProjectService {
 
     getProject(id: string): Observable<Project> {
         const url = `${this.projectsUrl}/${id}`;
-        console.log(url);
         return this.http.
             get<Project>(url)
             .pipe(map(data => {

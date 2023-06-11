@@ -1,0 +1,33 @@
+.blog-overview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-overview-controls {
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+
+div.blog-overview-item {
+    cursor: pointer;
+    margin: 1em;
+}
+
+.header {
+    cursor: pointer;
+    margin-bottom: .5em;
+}
+
+.titel {
+    font-weight: bold;
+    font-size: large;
+}
+
+.profile-img {
+        border-radius: 50%;
+        width: 3em;
+        height: auto;
+        margin-right: 1.5em;
+}

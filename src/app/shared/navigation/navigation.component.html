@@ -9,7 +9,10 @@
                 <a class="nav-link" [routerLink]="['']" (click)="isMenuCollapsed = true">root</a>
             </div>
             <div class="nav-item active">
-                <a class="nav-link" [routerLink]="['/cv']" (click)="isMenuCollapsed = true">projects</a>
+                <a class="nav-link" [routerLink]="['/cv']" (click)="isMenuCollapsed = true">cv</a>
+            </div>
+            <div *ngIf="(isAuthenticated() | async) == true" class="nav-item active">
+                <a class="nav-link" [routerLink]="['/blog']" (click)="isMenuCollapsed = true">blog</a>
             </div>
             <div class="nav-item active">
                 <a class="nav-link" [routerLink]="['/contact']" (click)="isMenuCollapsed = true">contact</a>
@@ -17,6 +20,8 @@
         </div>
     </div>
     <div class="pfroile-picture">
-        <img src="assets/images/profile.jpg" />
+        <a [routerLink]="['/login']">
+            <img src="assets/images/profile.jpg" />
+        </a>
     </div>
 </nav>
